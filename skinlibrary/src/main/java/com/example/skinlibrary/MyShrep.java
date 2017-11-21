@@ -1,4 +1,4 @@
-package com.example.yzy.skindemo;
+package com.example.skinlibrary;
 
 import android.content.Context;
 import android.content.SharedPreferences;
@@ -24,11 +24,11 @@ public class MyShrep {
         return instance;
     }
 
-    public void saveFlag(String flag){
-        mPreferences.edit().putString("flag",flag).commit();
+    public void savePath(String path){
+        mPreferences.edit().putString("skinPath",path).commit();
     }
 
-    public String getFlag(){
-        return mPreferences.getString("flag","-1");
+    public String getPath(){
+        return mPreferences.getString("skinPath","-1");
     }
 }

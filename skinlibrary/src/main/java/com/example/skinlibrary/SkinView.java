@@ -1,6 +1,5 @@
-package com.example.yzy.skindemo;
+package com.example.skinlibrary;
 
-import android.graphics.Color;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;

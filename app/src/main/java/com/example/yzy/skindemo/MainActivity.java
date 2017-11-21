@@ -1,35 +1,29 @@
 package com.example.yzy.skindemo;
 
 import android.os.Bundle;
+import android.os.Environment;
 import android.view.View;
+import android.widget.EditText;
+
+import com.example.skinlibrary.BaseActivity;
+
+import java.io.File;
 
 public class MainActivity extends BaseActivity {
+
+    private EditText nSkinEd;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        nSkinEd = (EditText)findViewById(R.id.skin_ed);
 
     }
 
     public void onClick(View pView) {
-        String flag="-1";
-        switch (pView.getId()) {
-            case R.id.bt:
-                flag = "-1";
-                break;
-            case R.id.bt0:
-                flag = "0";
-                break;
-            case R.id.bt1:
-                flag = "1";
-                break;
-            case R.id.bt2:
-                flag = "2";
-                break;
-            default:
-        }
-        mSkinFactory.apply(MainActivity.this, flag);
-        MyShrep.getInstance(this).saveFlag(flag);
+        String skinName=nSkinEd.getText().toString()+".apk";
+        String path = Environment.getExternalStorageDirectory()+ File.separator+skinName;
+        mSkinFactory.apply(MainActivity.this, path);
     }
 }

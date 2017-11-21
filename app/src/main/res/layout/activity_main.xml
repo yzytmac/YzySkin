@@ -7,6 +7,14 @@
     android:orientation="vertical"
     tools:context="com.example.yzy.skindemo.MainActivity">
 
+    <EditText
+        android:background="@color/colorPrimary"
+        android:id="@+id/skin_ed"
+        android:hint="输入皮肤名：skin0"
+        android:text="skin0"
+        android:textColor="@color/colorText"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"/>
     <Button
         android:id="@+id/bt"
         android:layout_width="match_parent"
@@ -14,41 +22,7 @@
         android:background="@color/colorButton"
         android:enabled="true"
         android:onClick="onClick"
-        android:text="选择默认皮肤"
-        android:textColor="@color/colorText"
-        />
-
-    <Button
-        android:visibility="gone"
-        android:id="@+id/bt0"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/colorButton"
-        android:enabled="true"
-        android:onClick="onClick"
-        android:text="选择皮肤0"
-        android:textColor="@color/colorText"
-        />
-
-    <Button
-        android:id="@+id/bt1"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/colorButton"
-        android:enabled="true"
-        android:onClick="onClick"
-        android:text="选择皮肤1"
-        android:textColor="@color/colorText"
-        />
-
-    <Button
-        android:id="@+id/bt2"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/colorButton"
-        android:enabled="true"
-        android:onClick="onClick"
-        android:text="选择皮肤2"
+        android:text="设置皮肤"
         android:textColor="@color/colorText"
         />
 

@@ -1,13 +1,10 @@
-package com.example.yzy.skindemo;
+package com.example.skinlibrary;
 
 import android.content.Context;
 import android.content.pm.PackageManager;
 import android.content.res.AssetManager;
 import android.content.res.Resources;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.graphics.drawable.Drawable;
-import android.os.Environment;
 import android.util.Log;
 
 import java.io.File;
@@ -22,10 +19,10 @@ public class SkinManger {
     private Context mContext;
     private String skinPackage;//皮肤报名
 
-    public void init(Context pContext,String flag) {
+    public void init(Context pContext,String path) {
         skinRes = null;
         mContext = pContext.getApplicationContext();//全局引用，时间最长
-        File vFile = new File(Environment.getExternalStorageDirectory(), "skin"+flag+".apk");
+        File vFile = new File(path);
         if(vFile.exists()) {
             SkinManger.getInstance().loadSkin(vFile.getAbsolutePath());
         }

@@ -1,4 +1,4 @@
-package com.example.yzy.skindemo;
+package com.example.skinlibrary;
 
 import android.content.Context;
 import android.support.v4.view.LayoutInflaterFactory;
@@ -77,11 +77,12 @@ public class SkinFactory implements LayoutInflaterFactory {
         return null;
     }
 
-    public void apply(Context pContext,String flag) {
-        SkinManger.getInstance().init(pContext,flag);
+    public void apply(Context pContext,String path) {
+        SkinManger.getInstance().init(pContext,path);
         for (SkinView vSkinView :mSkinViews){
             vSkinView.apply();
         }
+        MyShrep.getInstance(pContext).savePath(path);
     }
 
 

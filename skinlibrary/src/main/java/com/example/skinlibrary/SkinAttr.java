@@ -1,4 +1,4 @@
-package com.example.yzy.skindemo;
+package com.example.skinlibrary;
 
 /**
  * Created by yzy on 17-11-20.

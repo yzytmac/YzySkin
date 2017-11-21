@@ -1,4 +1,4 @@
-package com.example.yzy.skindemo;
+package com.example.skinlibrary;
 
 import android.app.Activity;
 import android.os.Bundle;
@@ -11,8 +11,8 @@ public class BaseActivity extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        String flag = MyShrep.getInstance(this).getFlag();
-        SkinManger.getInstance().init(this,flag);
+        String path = MyShrep.getInstance(this).getPath();
+        SkinManger.getInstance().init(this,path);
         mSkinFactory = new SkinFactory();
         //监听布局填充的情况
         LayoutInflaterCompat.setFactory(getLayoutInflater(),mSkinFactory);
