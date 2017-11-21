@@ -4,11 +4,9 @@ import android.content.Context;
 import android.support.v4.view.LayoutInflaterFactory;
 import android.util.AttributeSet;
 import android.util.Log;
-import android.view.LayoutInflater;
 import android.view.View;
 
 import java.lang.reflect.Constructor;
-import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -48,7 +46,7 @@ public class SkinFactory implements LayoutInflaterFactory {
         for (int i = 0; i < pAttrs.getAttributeCount(); i++) {
             String attrName = pAttrs.getAttributeName(i);//background
             //能够换肤
-            if (attrName.equals("background") || attrName.equals("textColor")) {
+            if (attrName.equals("background") || attrName.equals("textColor") || attrName.equals("src")) {
                 Log.e("yzy", "attrName: " + attrName);
                 String attrValue = pAttrs.getAttributeValue(i);//@color/colorText
                 int resId = Integer.parseInt(attrValue.substring(1));//因为属性值前面有一个@所以要去掉

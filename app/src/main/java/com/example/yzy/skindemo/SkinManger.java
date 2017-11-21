@@ -4,6 +4,9 @@ import android.content.Context;
 import android.content.pm.PackageManager;
 import android.content.res.AssetManager;
 import android.content.res.Resources;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.graphics.drawable.Drawable;
 import android.os.Environment;
 import android.util.Log;
 
@@ -56,7 +59,6 @@ public class SkinManger {
 
     public int getColor(SkinAttr pSkinAttr) {
         if (skinRes == null) {//代表资源包没有下载
-//            return pSkinAttr.resId;
             return mContext.getResources().getColor(pSkinAttr.resId);
         }
         String attrValueName = pSkinAttr.attrValue;
@@ -66,5 +68,19 @@ public class SkinManger {
             return mContext.getResources().getColor(pSkinAttr.resId);
         }
         return skinRes.getColor(resId);
+    }
+
+    public Drawable getDrawable(SkinAttr pSkinAttr) {
+
+        if (skinRes == null) {//代表资源包没有下载
+            return mContext.getResources().getDrawable(pSkinAttr.resId);
+        }
+        String attrValueName = pSkinAttr.attrValue;
+        int resId = skinRes.getIdentifier(attrValueName, pSkinAttr.attrType, skinPackage);
+        Log.e("yzy", "skinPackage===: " + skinPackage);
+        if(resId==0) {
+            return mContext.getResources().getDrawable(pSkinAttr.resId);
+        }
+        return skinRes.getDrawable(resId);
     }
 }

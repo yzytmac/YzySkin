@@ -51,4 +51,14 @@
         android:text="选择皮肤2"
         android:textColor="@color/colorText"
         />
+
+    <ImageView
+        android:background="@drawable/point"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <ImageView
+        android:src="@drawable/point"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
 </LinearLayout>

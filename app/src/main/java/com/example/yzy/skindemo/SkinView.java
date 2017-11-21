@@ -2,6 +2,7 @@ package com.example.yzy.skindemo;
 
 import android.graphics.Color;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.util.List;
@@ -25,11 +26,14 @@ public class SkinView {
                 if(vAttr.attrType.equals("color")) {
                     mView.setBackgroundColor(SkinManger.getInstance().getColor(vAttr));
                 }else if(vAttr.attrType.equals("drawable")) {
-//                    mView.setBackground();
+                    mView.setBackground(SkinManger.getInstance().getDrawable(vAttr));
                 }
             }else if(vAttr.attrName.equals("textColor")) {
                 TextView tv = (TextView) mView;
                 tv.setTextColor(SkinManger.getInstance().getColor(vAttr));
+            }else if(vAttr.attrName.equals("src")) {
+                ImageView iv = (ImageView) mView;
+                iv.setImageDrawable(SkinManger.getInstance().getDrawable(vAttr));
             }
         }
 
