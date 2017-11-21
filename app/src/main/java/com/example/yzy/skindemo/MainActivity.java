@@ -12,16 +12,24 @@ public class MainActivity extends BaseActivity {
 
     }
 
-    public void onClick(View pView){
-        switch (pView.getId()){
+    public void onClick(View pView) {
+        String flag="-1";
+        switch (pView.getId()) {
+            case R.id.bt:
+                flag = "-1";
+                break;
+            case R.id.bt0:
+                flag = "0";
+                break;
             case R.id.bt1:
-                mSkinFactory.apply(MainActivity.this,"");
+                flag = "1";
                 break;
             case R.id.bt2:
-                mSkinFactory.apply(MainActivity.this,"0");
+                flag = "2";
                 break;
             default:
         }
-
+        mSkinFactory.apply(MainActivity.this, flag);
+        MyShrep.getInstance(this).saveFlag(flag);
     }
 }

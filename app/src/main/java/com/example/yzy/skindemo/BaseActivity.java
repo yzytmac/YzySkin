@@ -11,7 +11,8 @@ public class BaseActivity extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        SkinManger.getInstance().init(this,"0");
+        String flag = MyShrep.getInstance(this).getFlag();
+        SkinManger.getInstance().init(this,flag);
         mSkinFactory = new SkinFactory();
         //监听布局填充的情况
         LayoutInflaterCompat.setFactory(getLayoutInflater(),mSkinFactory);

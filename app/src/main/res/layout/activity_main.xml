@@ -8,23 +8,47 @@
     tools:context="com.example.yzy.skindemo.MainActivity">
 
     <Button
-        android:id="@+id/bt1"
-        android:enabled="true"
-        android:onClick="onClick"
+        android:id="@+id/bt"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="@color/colorButton"
+        android:enabled="true"
+        android:onClick="onClick"
+        android:text="选择默认皮肤"
+        android:textColor="@color/colorText"
+        />
+
+    <Button
+        android:visibility="gone"
+        android:id="@+id/bt0"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorButton"
+        android:enabled="true"
+        android:onClick="onClick"
+        android:text="选择皮肤0"
+        android:textColor="@color/colorText"
+        />
+
+    <Button
+        android:id="@+id/bt1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorButton"
+        android:enabled="true"
+        android:onClick="onClick"
         android:text="选择皮肤1"
         android:textColor="@color/colorText"
-        android:background="@color/colorButton"
         />
+
     <Button
         android:id="@+id/bt2"
-        android:enabled="true"
-        android:onClick="onClick"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="@color/colorButton"
+        android:enabled="true"
+        android:onClick="onClick"
         android:text="选择皮肤2"
         android:textColor="@color/colorText"
-        android:background="@color/colorButton"
         />
 </LinearLayout>

@@ -20,9 +20,12 @@ public class SkinManger {
     private String skinPackage;//皮肤报名
 
     public void init(Context pContext,String flag) {
+        skinRes = null;
         mContext = pContext.getApplicationContext();//全局引用，时间最长
         File vFile = new File(Environment.getExternalStorageDirectory(), "skin"+flag+".apk");
-        SkinManger.getInstance().loadSkin(vFile.getAbsolutePath());
+        if(vFile.exists()) {
+            SkinManger.getInstance().loadSkin(vFile.getAbsolutePath());
+        }
     }
 
     private static final SkinManger ourInstance = new SkinManger();
@@ -53,14 +56,15 @@ public class SkinManger {
 
     public int getColor(SkinAttr pSkinAttr) {
         if (skinRes == null) {//代表资源包没有下载
-            return pSkinAttr.resId;
+//            return pSkinAttr.resId;
+            return mContext.getResources().getColor(pSkinAttr.resId);
         }
         String attrValueName = pSkinAttr.attrValue;
-        int id = skinRes.getIdentifier(attrValueName, pSkinAttr.attrType, skinPackage);
+        int resId = skinRes.getIdentifier(attrValueName, pSkinAttr.attrType, skinPackage);
         Log.e("yzy", "skinPackage===: " + skinPackage);
-        if(id==0) {
-            return pSkinAttr.resId;
+        if(resId==0) {
+            return mContext.getResources().getColor(pSkinAttr.resId);
         }
-        return skinRes.getColor(id);
+        return skinRes.getColor(resId);
     }
 }
