@@ -6,6 +6,7 @@ import android.view.View;
 import android.widget.EditText;
 
 import com.example.skinlibrary.SkinActivity;
+import com.example.skinlibrary.YzyChangeSkin;
 
 import java.io.File;
 
@@ -24,6 +25,6 @@ public class MainActivity extends SkinActivity {
     public void onClick(View pView) {
         String skinName= mSkinEd.getText().toString()+".apk";
         String path = Environment.getExternalStorageDirectory()+ File.separator+skinName;
-        YzyChangeSkin.changeSkin(MainActivity.this, path);
+        YzyChangeSkin.getInstance().changeSkin(MainActivity.this, path);
     }
 }

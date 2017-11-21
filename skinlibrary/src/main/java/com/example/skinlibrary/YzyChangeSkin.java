@@ -14,9 +14,14 @@ import java.util.List;
  * Created by yzy on 17-11-20.
  */
 
-public class SkinFactory implements LayoutInflaterFactory {
+public class YzyChangeSkin implements LayoutInflaterFactory {
     private static final String[] prefixList = {"android.webkit.", "android.view.", "android.widget."};
     private List<SkinView> mSkinViews = new ArrayList<>();
+    private static final YzyChangeSkin instance = new YzyChangeSkin();
+    private YzyChangeSkin(){}
+    public static YzyChangeSkin getInstance(){
+        return instance;
+    }
 
     @Override
     public View onCreateView(View parent, String name, Context context, AttributeSet attrs) {

@@ -18,7 +18,7 @@ dependencies {
 ```
 4、需要换肤的页面继承SkinActivity  
 5、将皮肤包skin.apk复制到手机  
-6、调用YzyChangeSkin.changeSkin(context, skinPath);进行换肤  
+6、调用YzyChangeSkin.getInstance().changeSkin(context, skinPath);进行换肤  
 **注意**  
 1、所有的颜色、图片资源都是引用资源，不能在xml文件中写死，否则无法更换  
 2、皮肤包也是一个apk，该包内只需要有引用资源的同名的图片、同名的颜色引用即可。  
