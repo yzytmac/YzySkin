@@ -11,18 +11,18 @@ import java.io.File;
 
 public class MainActivity extends SkinActivity {
 
-    private EditText nSkinEd;
+    private EditText mSkinEd;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        nSkinEd = (EditText)findViewById(R.id.skin_ed);
+        mSkinEd = (EditText)findViewById(R.id.skin_ed);
 
     }
 
     public void onClick(View pView) {
-        String skinName=nSkinEd.getText().toString()+".apk";
+        String skinName= mSkinEd.getText().toString()+".apk";
         String path = Environment.getExternalStorageDirectory()+ File.separator+skinName;
         YzyChangeSkin.changeSkin(MainActivity.this, path);
     }
