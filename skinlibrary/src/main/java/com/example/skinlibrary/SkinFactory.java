@@ -61,7 +61,7 @@ public class SkinFactory implements LayoutInflaterFactory {
         if(!vSkinAttrList.isEmpty()) {
             SkinView vSkinView = new SkinView(pView, vSkinAttrList);
             mSkinViews.add(vSkinView);
-            vSkinView.apply();
+            vSkinView.changeSkin();
         }
     }
 
@@ -77,10 +77,10 @@ public class SkinFactory implements LayoutInflaterFactory {
         return null;
     }
 
-    public void apply(Context pContext,String path) {
+    public void changeSkin(Context pContext, String path) {
         SkinManger.getInstance().init(pContext,path);
         for (SkinView vSkinView :mSkinViews){
-            vSkinView.apply();
+            vSkinView.changeSkin();
         }
         MyShrep.getInstance(pContext).savePath(path);
     }

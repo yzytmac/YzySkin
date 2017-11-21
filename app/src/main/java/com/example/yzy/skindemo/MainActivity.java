@@ -5,11 +5,11 @@ import android.os.Environment;
 import android.view.View;
 import android.widget.EditText;
 
-import com.example.skinlibrary.BaseActivity;
+import com.example.skinlibrary.SkinActivity;
 
 import java.io.File;
 
-public class MainActivity extends BaseActivity {
+public class MainActivity extends SkinActivity {
 
     private EditText nSkinEd;
 
@@ -24,6 +24,6 @@ public class MainActivity extends BaseActivity {
     public void onClick(View pView) {
         String skinName=nSkinEd.getText().toString()+".apk";
         String path = Environment.getExternalStorageDirectory()+ File.separator+skinName;
-        mSkinFactory.apply(MainActivity.this, path);
+        YzyChangeSkin.changeSkin(MainActivity.this, path);
     }
 }

@@ -19,7 +19,7 @@ public class SkinView {
         list = pList;
     }
 
-    public void apply(){
+    public void changeSkin(){
         for (SkinAttr vAttr : list) {
             if(vAttr.attrName.equals("background")) {
                 if(vAttr.attrType.equals("color")) {
