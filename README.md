@@ -1,4 +1,4 @@
-# SkinDemo
+# YzySkin
 **网易云音乐换肤框架实现**  
 使用步骤  
 1、在app目录中创建一个aars的文件夹  
