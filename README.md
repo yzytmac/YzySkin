@@ -1,5 +1,7 @@
 # YzySkin
 **网易云音乐换肤框架实现**  
+- 如果觉得有用，不吝啬在右上角给我一个Star。谢谢！！  
+![](https://raw.githubusercontent.com/yzytmac/yzytmac.github.io/master/images/star.png)  
 使用步骤  
 1、在app目录中创建一个aars的文件夹  
 2、将skinlibrary.aar复制进去  
